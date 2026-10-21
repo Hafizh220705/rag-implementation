@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-10-21T07:16:42.015055+00:00",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_dimension": 384,
+  "normalized_embeddings": true,
+  "vector_database": "ChromaDB",
+  "chromadb_version": "1.5.9",
+  "distance_metric": "cosine",
+  "collection_name": "pharmaguard_dense_e5_v1",
+  "corpus_sha256": "cb936746ed6314f85aca570217927374c859012b6b0beb470ddeee03580652db",
+  "batch_size": 16,
+  "total_chunks": 348,
+  "indexed_count": 348
+}
