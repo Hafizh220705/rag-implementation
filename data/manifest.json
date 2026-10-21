@@ -1,0 +1,52 @@
+{
+  "dataset_name": "PharmaGuard-RAG Indonesian pharmacovigilance corpus (candidate)",
+  "status": "candidate_not_yet_audited",
+  "source_policy": "Official public sources; check redistribution conditions before rehosting PDFs.",
+  "documents": [
+    {
+      "id": "D1",
+      "file_name": "D1_perbpom_4_2026.pdf",
+      "title": "Peraturan BPOM Nomor 4 Tahun 2026 tentang Pelaksanaan Farmakovigilans",
+      "publisher": "Badan Pengawas Obat dan Makanan",
+      "year": 2026,
+      "document_type": "regulation",
+      "legal_status": "in_force_as_of_2026-10-20",
+      "source_url": "https://jdih.pom.go.id/view/slide/1738/4/2026/1d424cdb0df701a960adbb0092314569",
+      "download_mode": "manual_from_official_JDIH_or_BPK",
+      "note": "Official BPK record includes regulation and attachment; distinguish PDF pages from printed pages."
+    },
+    {
+      "id": "D2",
+      "file_name": "D2_modul_industri_farmasi_2020.pdf",
+      "title": "Modul Farmakovigilans untuk Industri Farmasi",
+      "publisher": "Badan POM / JICA",
+      "year": 2020,
+      "document_type": "training_module",
+      "legal_status": "educational_reference_not_current_regulation",
+      "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf",
+      "download_mode": "manual_or_direct"
+    },
+    {
+      "id": "D3",
+      "file_name": "D3_modul_dasar_2020.pdf",
+      "title": "Modul Farmakovigilans Dasar",
+      "publisher": "Badan POM / JICA",
+      "year": 2020,
+      "document_type": "training_module",
+      "legal_status": "educational_reference_not_current_regulation",
+      "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf",
+      "download_mode": "manual_or_direct"
+    },
+    {
+      "id": "D4",
+      "file_name": "D4_buku_saku_eso_2019.pdf",
+      "title": "Buku Saku - Panduan Deteksi dan Pelaporan ESO untuk Tenaga Kesehatan",
+      "publisher": "Badan Pengawas Obat dan Makanan",
+      "year": 2019,
+      "document_type": "educational_booklet",
+      "legal_status": "educational_reference_not_current_regulation",
+      "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5c88d7a513d86_Buku%20Saku%20-%20Panduan%20Deteksi%20dan%20Pelaporan%20ESO%20untuk%20Tenaga%20Kesehatan.pdf",
+      "download_mode": "manual_or_direct"
+    }
+  ]
+}

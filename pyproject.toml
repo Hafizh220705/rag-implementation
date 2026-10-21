@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pharmaguard-rag"
+version = "0.0.1"
+description = "Evidence-grounded RAG for Indonesian pharmacovigilance documents"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "PyMuPDF>=1.24,<2.0",
+    "python-dotenv>=1.0,<2.0",
+    "requests>=2.31,<3.0",
+]
+
+[project.optional-dependencies]
+models = ["sentence-transformers>=3.2,<6.0"]
+dev = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

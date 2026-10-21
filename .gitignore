@@ -1,0 +1,32 @@
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated data and indexes
+data/processed/*
+!data/processed/.gitkeep
+data/indexes/*
+!data/indexes/.gitkeep
+
+# Temporary audit files
+outputs/audit_review/
+
+# IDE
+.vscode/
+.idea/

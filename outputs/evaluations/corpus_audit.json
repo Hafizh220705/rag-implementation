@@ -1,0 +1,80 @@
+{
+  "generated_at_utc": "2026-10-21T03:09:46.389930+00:00",
+  "method": "PyMuPDF get_text('text'); pages <100 chars marked for inspection (heuristic, not a pass/fail grade)",
+  "records": [
+    {
+      "id": "D1",
+      "filename": "D1_perbpom_4_2026.pdf",
+      "exists": true,
+      "sha256": "aed95b99f4dab5022e1491377106d182b632a160566d953b637bd0e1b6517b17",
+      "size_bytes": 1898414,
+      "page_count": 131,
+      "total_extracted_chars": 297465,
+      "pages_over_100_chars": 130,
+      "pages_low_text": [
+        71
+      ],
+      "text_page_fraction": 0.992,
+      "requires_manual_inspection": true
+    },
+    {
+      "id": "D2",
+      "filename": "D2_modul_industri_farmasi_2020.pdf",
+      "exists": true,
+      "sha256": "8cb2aab3a6b361ecc8bdf8844b6ad19a46531c3ea72bd229c80f551f2925d03e",
+      "size_bytes": 822409,
+      "page_count": 97,
+      "total_extracted_chars": 116689,
+      "pages_over_100_chars": 95,
+      "pages_low_text": [
+        7,
+        13
+      ],
+      "text_page_fraction": 0.979,
+      "requires_manual_inspection": true
+    },
+    {
+      "id": "D3",
+      "filename": "D3_modul_dasar_2020.pdf",
+      "exists": true,
+      "sha256": "f2a92b0867fabed4555134ac797961a93f7014ac6a7a834339d64e66edb4eea9",
+      "size_bytes": 4446431,
+      "page_count": 42,
+      "total_extracted_chars": 38741,
+      "pages_over_100_chars": 32,
+      "pages_low_text": [
+        1,
+        4,
+        5,
+        7,
+        9,
+        26,
+        27,
+        28,
+        41,
+        42
+      ],
+      "text_page_fraction": 0.762,
+      "requires_manual_inspection": true
+    },
+    {
+      "id": "D4",
+      "filename": "D4_buku_saku_eso_2019.pdf",
+      "exists": true,
+      "sha256": "bd3c6c1b2cfde880091308a922690442cc80c3b0ac3e7e424d3a1d8d89af1b4b",
+      "size_bytes": 2036582,
+      "page_count": 26,
+      "total_extracted_chars": 20530,
+      "pages_over_100_chars": 21,
+      "pages_low_text": [
+        20,
+        21,
+        22,
+        24,
+        25
+      ],
+      "text_page_fraction": 0.808,
+      "requires_manual_inspection": true
+    }
+  ]
+}
