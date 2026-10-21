@@ -47,3 +47,51 @@ The audit prints document page/character counts and saves results to `outputs/ev
 
 ## Assessment requirements
 KALBE Option 1 requires end-to-end ingestion, retrieval, LLM answer generation, attribution, reproducibility and saved examples. The baseline is not done until all of those are verified. Optional experiments (Langfuse, hybrid retrieval) come later. Cite reused resources and disclose AI assistance accurately.
+
+
+## Observability with Langfuse
+
+PharmaGuard-RAG supports optional Langfuse tracing.
+
+Each RAG execution can record:
+
+- User question and final answer
+- Retrieved chunk IDs and similarity scores
+- Retrieval latency
+- LLM prompts and generated response
+- Generation latency
+- Pipeline status and total latency
+
+### Configuration
+
+Set the following environment variables in `.env`:
+
+LANGFUSE_ENABLED=true
+LANGFUSE_PUBLIC_KEY=your_public_key
+LANGFUSE_SECRET_KEY=your_secret_key
+LANGFUSE_BASE_URL=https://cloud.langfuse.com
+
+Set `LANGFUSE_ENABLED=false` to run without tracing.
+
+### Run Tracing Test
+
+```powershell
+python scripts/test_langfuse_manual.py
+python scripts/test_rag_traced_manual.py
+```
+
+### Known Limitations
+
+- Tracing does not guarantee answer correctness.
+- The baseline may incorrectly abstain despite relevant evidence.
+- Citation validity does not guarantee claim-level faithfulness.
+- Langfuse Cloud receives the telemetry data configured for tracing.
+- Evaluation and failure analysis are performed separately.
+
+## AI Assistance Disclosure
+
+AI assistance was used for development guidance,
+code drafting, debugging, and documentation.
+The implementation, experiments, and results must
+be reviewed and verified by the project author.
+
