@@ -1,0 +1,301 @@
+{
+  "generated_at_utc": "2026-10-21T14:03:01.548892+00:00",
+  "pipeline": "baseline-v1",
+  "retrieval_method": "dense",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "generation_model": "qwen2.5:3b",
+  "top_k": 4,
+  "summary": {
+    "evaluated_cases": 4,
+    "status_counts": {
+      "answered": 2,
+      "execution_error": 1,
+      "insufficient_evidence": 1
+    },
+    "mean_latency_seconds": 39.704,
+    "abstentions_to_review": [],
+    "unexpected_answers_to_review": []
+  },
+  "limitations": [
+    "Gold evidence is not fully verified.",
+    "Status counts are not accuracy metrics.",
+    "Faithfulness requires manual review.",
+    "Citation structure does not prove support."
+  ],
+  "per_question": [
+    {
+      "question_id": "F01",
+      "category": "factual",
+      "question": "Apa yang dimaksud dengan farmakovigilans?",
+      "gold_verified": false,
+      "should_abstain": false,
+      "status": "answered",
+      "answer": "Farmakovigilans adalah seluruh kegiatan tentang pendeteksian, penilaian, pemahaman, dan pencegahan efek samping atau masalah lainnya terkait dengan penggunaan obat [S1, S2]. Tujuan dari farmakovigilans adalah untuk mendeteksi masalah keamanan obat yang belum diketahui, mendeteksi peningkatan frekuensi kejadian efek samping, mengidentifikasi faktor risiko, mengkuantifikasi risiko, mengkomunikasikan informasi keamanan obat dan pencegahan terjadinya risiko keamanan obat [S1, S2]. Aktivitas ini juga mencakup pencegahan dampak dari reaksi yang merugikan pada manusia akibat penggunaan produk obat, baik di dalam maupun di luar otoritas pemasaran, atau dari paparan lingkungan kerja [D3, PDF hlm. 18, D3_p018_c001].",
+      "raw_answer": "Farmakovigilans adalah seluruh kegiatan tentang pendeteksian, penilaian, pemahaman, dan pencegahan efek samping atau masalah lainnya terkait dengan penggunaan obat [S1, S2]. Tujuan dari farmakovigilans adalah untuk mendeteksi masalah keamanan obat yang belum diketahui, mendeteksi peningkatan frekuensi kejadian efek samping, mengidentifikasi faktor risiko, mengkuantifikasi risiko, mengkomunikasikan informasi keamanan obat dan pencegahan terjadinya risiko keamanan obat [S1, S2]. Aktivitas ini juga mencakup pencegahan dampak dari reaksi yang merugikan pada manusia akibat penggunaan produk obat, baik di dalam maupun di luar otoritas pemasaran, atau dari paparan lingkungan kerja [S1].",
+      "cited_sources": [
+        {
+          "label": "S1",
+          "chunk_id": "D3_p018_c001",
+          "document_id": "D3",
+          "title": "Modul Farmakovigilans Dasar",
+          "source_file": "D3_modul_dasar_2020.pdf",
+          "pdf_page": 18,
+          "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf"
+        }
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "D3_p018_c001",
+          "document_id": "D3",
+          "title": "Modul Farmakovigilans Dasar",
+          "source_file": "D3_modul_dasar_2020.pdf",
+          "pdf_page": 18,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf",
+          "text": "9 B. Definisi dan Ruang Lingkup Farmakovigilans 1. Definisi dan Tujuan dari PV a. Definisi PV Farmakovigilans adalah ilmu dan kegiatan yang berhubungan dengan deteksi, penilaian/evaluasi, pemahaman dan pencegahan terhadap dampak dari reaksi yang merugikan atau hal-hal lain yang mungkin terjadi terkait dengan masalah penggunaan obat (WHO, 2000). Aktivitas berupa pencegahan dampak dari reaksi yang merugikan pada manusia akibat penggunaan produk obat, baik di dalam maupun di luar otoritas pemasaran, atau dari paparan lingkungan kerja, juga mencakup promosi penggunaan obat yang aman dan efektif, khususnya melalui informasi tentang keamanan produk obat yang diberikan secara berkala kepada pasien, para profesional kesehatan, dan masyarakat umum. Oleh karenanya Farmakovigilans menjadi suatu kegiatan yang memberikan perlindungan kepada pasien dan kesehatan masyarakat. b. Tujuan PV 1) Meningkatkan perawatan dan keselamatan pasien khususnya dalam penggunaan obat dan seluruh intervensi pengobatan; 2) Meningkatkan kesehatan dan keamanan masyarakat khususnya dalam penggunaan obat; 3) Menemukan masalah terkait dengan penggunaan obat dan menyampaikan temuan tersebut pada saat yang tepat; 4) Memberikan kontribusi dalam penilaian manfaat, bahaya, khasiat, dan risiko obat untuk mencegah dampak yang merugikan dan untuk memak- simalkan manfaat obat tersebut;",
+          "distance": 0.10954999923706055,
+          "similarity": 0.8904500007629395
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D2_p002_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 2,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf",
+          "text": "i KATA PENGANTAR Farmakovigilans adalah seluruh kegiatan tentang pendeteksian, penilaian, pemahaman, dan pencegahan efek samping atau masalah lainnya terkait dengan penggunaan obat. Keamanan penggunaan obat beredar harus secara terus-menerus dipantau karena keterbatasan informasi keamanan pada fase pengembangan obat (uji klinik). Pemantauan ini dilakukan melalui aktivitas farmakovigilans. Tujuan dilakukannya farmakovigilans adalah untuk mendeteksi masalah keamanan obat yang yang belum diketahui, mendeteksi peningkatan frekuensi kejadian efek samping, mengidentifikasi faktor risiko, mengkuantifikasi risiko, mengkomunikasikan informasi keamanan obat dan pencegahan terjadinya risiko keamanan obat. Badan POM bekerja sama dengan dukungan JICA (Japan International Cooperation Agency) dalam proyek “Ensuring Drug and Food Safety” untuk memperkuat sistem pengawasan keamanan obat dan makanan yang dilakukan Badan POM. Berbagai aktivitas dilakukan untuk mewujudkan tujuan dari proyek kerja sama tersebut, termasuk pengembangan modul pelatihan farmakovigilans. Dalam proyek kerja sama ini dikembangkan 4 (empat) modul pelatihan farmakovigilans yang terdiri dari modul farmakovigilans dasar, modul farmakovigilans untuk industri farmasi, modul farmakovigilans untuk tenaga kesehatan, dan modul farmakovigilans untuk Balai Besar/Balai POM untuk digunakan dalam pelatihan farmakovigilans. Modul pelatihan ini disusun dengan semangat untuk meningkatkan kompetensi farmakovigilans industri farmasi, tenaga kesehatan, dan petugas di Balai Besar/Balai POM sehingga dapat melakukan pengawasan keamanan obat secara sinergis. Selain itu juga untuk meningkatkan awareness tenaga kesehatan dan industri farmasi dalam hal pelaporan Kejadian",
+          "distance": 0.112640380859375,
+          "similarity": 0.887359619140625
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D3_p023_c001",
+          "document_id": "D3",
+          "title": "Modul Farmakovigilans Dasar",
+          "source_file": "D3_modul_dasar_2020.pdf",
+          "pdf_page": 23,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf",
+          "text": "14 d. Industri Farmasi atau Pemegang Izin Edar 1) Membangun sistem farmakovigilans di industri farmasi 2) Melakukan penunjukan penanggung jawab dan back-up penanggung jawab farmakovigilans yang bertanggung jawab penuh atas aktivitas farmakovigilans 3) Memastikan adanya perjanjian pelaksanaan farmakovigilans dengan pihak lain 4) Melakukan pemantauan, pengumpulan, peni- laian, dan pelaporan masalah keamanan produk 5) Memastikan terintegrasinya sistem farmako- vigilans dengan sistem manajemen kualitas pada industri farmasi 6) Menjaga kerahasiaan data farmakovigilans dengan melakukan manajemen data yang baik 7) Memberikan ringkasan sistem farmakovigilans kepada Badan POM. 8) Secara berkala memantau pelaporan kepada otoritas yang berwenang sesuai dengan peraturan yang berlaku 9) Memberikan akses untuk pihak berwenang (otoritas regulasi) dalam melaksanakan pemeriksaan farmakovigilans 10) Menyampaikan informasi ke Badan POM sebelum inspeksi/audit pemeriksaan farmakovigilans dilakukan oleh otoritas regulatori negara lain dan melaporkan hasilnya tersebut 11) Melaksanakan pelatihan farmakovigilans untuk seluruh personil industri farmasi.",
+          "distance": 0.11295664310455322,
+          "similarity": 0.8870433568954468
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D3_p002_c001",
+          "document_id": "D3",
+          "title": "Modul Farmakovigilans Dasar",
+          "source_file": "D3_modul_dasar_2020.pdf",
+          "pdf_page": 2,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf",
+          "text": "i Farmakovigilans adalah seluruh kegiatan tentang pendeteksian, penilaian, pemahaman, dan pencegahan efek samping atau masalah lainnya terkait dengan penggunaan obat. Keamanan penggunaan obat beredar harus secara terus-menerus dipantau karena keterbatasan informasi keamanan pada fase pengembangan obat (uji klinik). Pemantauan ini dilakukan melalui aktivitas farmakovigilans. Tujuan dilakukannya farmakovigilans adalah untuk mendeteksi masalah keamanan obat yang yang belum diketahui, mendeteksi peningkatan frekuensi kejadian efek samping, mengidentifikasi faktor risiko, mengkuantifikasi risiko, mengkomunikasikan informasi keamanan obat dan pencegahan terjadinya risiko keamanan obat. Badan POM bekerja sama dengan dukungan JICA (Japan International Cooperation Agency) dalam proyek “Ensuring Drug and Food Safety” untuk memperkuat sistem pengawasan keamanan obat dan makanan yang dilakukan Badan POM. Berbagai aktivitas dilakukan untuk mewujudkan tujuan dari proyek kerja sama tersebut, termasuk pengembangan modul pelatihan farmakovigilans. Dalam proyek kerja sama ini dikembangkan 4 (empat) modul pelatihan farmakovigilans yang terdiri dari modul farmakovigilans dasar, modul farmakovigilans untuk industri farmasi, modul farmakovigilans untuk tenaga kesehatan, dan modul farmakovigilans untuk Balai Besar/Balai POM untuk digunakan dalam pelatihan farmakovigilans. Modul pelatihan ini disusun dengan semangat untuk meningkatkan kompetensi farmakovigilans industri farmasi, tenaga kesehatan, dan petugas di Balai Besar/Balai POM sehingga dapat melakukan pengawasan keamanan obat secara sinergis. Selain itu juga untuk meningkatkan awareness tenaga kesehatan dan industri farmasi dalam hal pelaporan Kejadian Tidak Diinginkan (KTD)/Efek Samping Obat (ESO) yang terjadi di Indonesia. Dengan data laporan ESO yang baik dan memadai untuk proses evaluasi maka kita bersama-sama dapat mengawal keamanan penggunaan obat di Indonesia. KATA PENGANTAR",
+          "distance": 0.11389219760894775,
+          "similarity": 0.8861078023910522
+        }
+      ],
+      "latency_seconds": 45.145,
+      "execution_error": null
+    },
+    {
+      "question_id": "F03",
+      "category": "factual",
+      "question": "Apa yang dimaksud dengan pelaporan spontan?",
+      "gold_verified": false,
+      "should_abstain": false,
+      "status": "answered",
+      "answer": "Pelaporan spontan adalah suatu sistem yang seluruhnya bergantung pada motivasi individu untuk mencatat dan mengirimkan informasi tentang sesuatu yang buruk yang telah terjadi pada pasien kepada organisasi yang bertanggung jawab untuk mengumpulkan laporan atas akibat yang tidak diharapkan/dampak buruk. Ini dapat dilakukan melalui berbagai cara, termasuk kertas, pelaporan online, atau aplikasi selular. Pelaporan spontan penting dalam pengawasan keamanan obat, terutama karena informasi yang didapatkan dari pelaporan spontan memiliki tingkat keakuratan yang tinggi dengan biaya pemeliharaan yang rendah [D3, PDF hlm. 31, D3_p031_c001]. Selain itu, pelaporan spontan juga merupakan bagian dari sistem pengawasan data yang mencakup berbagai sumber, termasuk sistem pelaporan spontan, sistem pengawasan aktif, dan studi ilmiah [D2, PDF hlm. 95, D2_p095_c001]. Pelaporan spontan juga dapat berisi informasi tentang tindakan pengaturan terkait keamanan, seperti pembatasan penggunaan produk obat atau penarikan dari pasar [D2, PDF hlm. 54, D2_p054_c001]. Dalam konteks manajemen sinyal, pelaporan spontan sering digunakan untuk mendeteksi sinyal atau kejadian tidak diinginkan [D2, PDF hlm. 54, D2_p054_c001]. Definisi pelaporan spontan juga disebut sebagai \"unsolicited communication\" yang diberikan oleh perusahaan, badan regulatori, atau organisasi lain kepada perusahaan, badan regulatori, atau organisasi lain yang menjelaskan bahwa kejadian tersebut terjadi pada pasien terkait pemberian satu atau lebih obat [D2, PDF hlm. 93, D2_p093_c001].",
+      "raw_answer": "Pelaporan spontan adalah suatu sistem yang seluruhnya bergantung pada motivasi individu untuk mencatat dan mengirimkan informasi tentang sesuatu yang buruk yang telah terjadi pada pasien kepada organisasi yang bertanggung jawab untuk mengumpulkan laporan atas akibat yang tidak diharapkan/dampak buruk. Ini dapat dilakukan melalui berbagai cara, termasuk kertas, pelaporan online, atau aplikasi selular. Pelaporan spontan penting dalam pengawasan keamanan obat, terutama karena informasi yang didapatkan dari pelaporan spontan memiliki tingkat keakuratan yang tinggi dengan biaya pemeliharaan yang rendah [S1]. Selain itu, pelaporan spontan juga merupakan bagian dari sistem pengawasan data yang mencakup berbagai sumber, termasuk sistem pelaporan spontan, sistem pengawasan aktif, dan studi ilmiah [S2]. Pelaporan spontan juga dapat berisi informasi tentang tindakan pengaturan terkait keamanan, seperti pembatasan penggunaan produk obat atau penarikan dari pasar [S3]. Dalam konteks manajemen sinyal, pelaporan spontan sering digunakan untuk mendeteksi sinyal atau kejadian tidak diinginkan [S3]. Definisi pelaporan spontan juga disebut sebagai \"unsolicited communication\" yang diberikan oleh perusahaan, badan regulatori, atau organisasi lain kepada perusahaan, badan regulatori, atau organisasi lain yang menjelaskan bahwa kejadian tersebut terjadi pada pasien terkait pemberian satu atau lebih obat [S4].",
+      "cited_sources": [
+        {
+          "label": "S1",
+          "chunk_id": "D3_p031_c001",
+          "document_id": "D3",
+          "title": "Modul Farmakovigilans Dasar",
+          "source_file": "D3_modul_dasar_2020.pdf",
+          "pdf_page": 31,
+          "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf"
+        },
+        {
+          "label": "S2",
+          "chunk_id": "D2_p095_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 95,
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf"
+        },
+        {
+          "label": "S3",
+          "chunk_id": "D2_p054_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 54,
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf"
+        },
+        {
+          "label": "S4",
+          "chunk_id": "D2_p093_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 93,
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf"
+        }
+      ],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "D3_p031_c001",
+          "document_id": "D3",
+          "title": "Modul Farmakovigilans Dasar",
+          "source_file": "D3_modul_dasar_2020.pdf",
+          "pdf_page": 31,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/KMEI-5eaa2698c3abc_Modul%20Farmakovigilans%20Dasar_.pdf",
+          "text": "22 LAPORAN FARMAKOVIGILANS A. Pelaporan Spontan Pelaporan spontan merupakan pelaporan kejadian tidak diinginkan / efek samping obat yang bersifat sukarela ketika tenaga profesional kesehatan atau pasien memutuskan melaporkan adanya dampak buruk suatu obat kepada pusat farmakovigilans baik tingkat lokal ataupun nasional. Pelaporan spontan adalah suatu sistem yang seluruhnya bergantung pada motivasi dari setiap individu untuk mencatat dan mengirimkan informasi tentang sesuatu yang buruk yang telah terjadi pada pasien kepada organisasi yang bertanggungjawab untuk mengumpulkan laporan atas akibat yang tidak diharapkan/dampak buruk (biasanya pusat farmakovigilans lokal maupun nasional). Penggunaan kertas adalah cara yang paling umum digunakan untuk berkomunikasi, namun pelaporan online (daring) dan pelaporan menggunakan aplikasi selular juga tersedia di beberapa negara dan hal ini adalah kemajuan yang penting untuk masa depan. Di semua negara, sistem farmakovigilans nasional sangat bergantung pada pelaporan spontan (sukarela) yang dilakukan oleh para tenaga profesional kesehatan, pemegang izin edar (produsen) atau langsung oleh pasien. Dari semua sumber data untuk pengawasan keamanan obat, sistem pelaporan spontan memberikan informasi yang paling tinggi dengan biaya pemeliharaan yang paling rendah. Dan informasi tersebut telah BAB III",
+          "distance": 0.11016833782196045,
+          "similarity": 0.8898316621780396
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D2_p095_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 95,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf",
+          "text": "82 obat atau tingkat pelaporan dengan perkiraan paparan pasien> <Sebuah pernyataan yang menunjukkan adanya hubungan antara kejadian tidak diinginkan/ efek samping obat dan penggunaan yang tidak sesuai label, jika ada> <Jika ada, perincian tentang rekomendasi untuk meminimalkan risiko> <Pernyataan jika informasi produk akan atau telah direvisi, termasuk deskripsi tentang perubahan yang dibuat atau diusulkan> Panduan: tidak perlu menyertakan atau melampirkan teks informasi produk pada saat penyebaran DHPC mungkin tidak tersedia sebagai terjemahan final yang disetujui) <Tempat risiko dalam konteks manfaat> <Alasan penyebaran DHPC pada saat ini> <Setiap bukti yang mendukung rekomendasi (mis., termasuk kutipan studi utama)> <Pernyataan tentang DHPC sebelumnya yang terkait dengan masalah keamanan saat ini yang baru saja disebarluaskan> <Setiap jadwal untuk tindakan tindak lanjut oleh industri farmasi / otoritas yang kompeten, jika ada> Himbauan untuk Pelaporan <Pengingat akan kebutuhan dan bagaimana melaporkan kejadian tidak diinginkan sesuai dengan sistem pelaporan spontan nasional, termasuk perinciannya (mis. nama, alamat pos, nomor faks, alamat situs web) tentang cara mengakses sistem pelaporan spontan nasional> <Untuk produk biologi, sertakan juga pengingat untuk melaporkan nama produk dan rincian batch>. <Sebutkan jika produk dikenakan pemantauan tambahan dan alasannya> Informasi Kontak Perusahaan",
+          "distance": 0.15770137310028076,
+          "similarity": 0.8422986268997192
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D2_p054_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 54,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf",
+          "text": "41 selesai, misalnya peningkatan kejadian fatal yang tidak dapat diperkirakan atau yang mengancam jiwa; b. Masalah keamanan utama yang diidentifikasi melalui pelaporan spontan atau dimuat dalam literatur ilmiah, yang dapat menyebabkan pertimbangan kontra indikasi, pembatasan penggunaan produk obat atau penarikan dari pasar; c. Tindakan pengaturan terkait keamanan utama di luar Indonesia, mis. pembatasan atau penangguhan penggunaan produk obat. 2. Struktur dan Proses 2.1. Sumber Data dan Informasi Sinyal dapat muncul dari berbagai sumber data sehingga berpotensi mencakup semua informasi ilmiah mengenai penggunaan produk obat dan hasil penggunaannya, yaitu kualitas, data non-klinik dan klinik (termasuk data farmakovigilans dan farmakoepidemiologi). Sumber umum sinyal meliputi sistem pelaporan spontan, sistem pengawasan aktif, studi dan literatur ilmiah yang melaporkan data tersebut. Deteksi sinyal sering didasarkan pada pemantauan berkala dari database kejadian tidak diinginkan yang diharapkan, yang dapat bervariasi dalam ukuran atau wewenang, misalnya database industri farmasi, database nasional, EudraVigilance, database WHO Program for International Drug Monitoring (VigiBase). Fokus modul ini terutama pada sinyal yang berasal dari pemantauan data dari sistem pelaporan spontan, namun semua sumber yang relevan harus dipertimbangkan selama manajemen sinyal.",
+          "distance": 0.1644793152809143,
+          "similarity": 0.8355206847190857
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D2_p093_c001",
+          "document_id": "D2",
+          "title": "Modul Farmakovigilans untuk Industri Farmasi",
+          "source_file": "D2_modul_industri_farmasi_2020.pdf",
+          "pdf_page": 93,
+          "document_type": "training_module",
+          "legal_status": "educational_reference_not_current_regulation",
+          "source_url": "https://kmei.pom.go.id/storage/medialain/Balai-Besar-POM-di-Jakarta-5eaa2719a581b_Modul%20Pelatihan%20Farmakovigilans%20untuk%20IF_oke.pdf",
+          "text": "80 Hal Istilah Glosarium Sumber Definisi Definisi/Penjelasan 18. Spontaneous report or spontaneous notification Pedoman ICH E2D Unsolicited communication kepada perusahaan, badan regulatori, atau organisasi lain yang menjelaskan bahwa ESO yang terjadi pada pasien terkait pemberian satu atau lebih obat bukan berasal dari penelitian atau skema pengumpulan data yang terorganisir.",
+          "distance": 0.1725679636001587,
+          "similarity": 0.8274320363998413
+        }
+      ],
+      "latency_seconds": 40.95,
+      "execution_error": null
+    },
+    {
+      "question_id": "F05",
+      "category": "factual",
+      "question": "Apa kewajiban pemilik izin edar terkait penunjukan penanggung jawab farmakovigilans?",
+      "gold_verified": false,
+      "should_abstain": false,
+      "status": "execution_error",
+      "answer": "",
+      "raw_answer": "",
+      "cited_sources": [],
+      "retrieved_chunks": [],
+      "latency_seconds": null,
+      "execution_error": "Ollama output was truncated because the generation limit was reached. Reduce answer length or increase num_predict."
+    },
+    {
+      "question_id": "I01",
+      "category": "insufficient_evidence",
+      "question": "Bagaimana prosedur mengganti oli mesin kendaraan?",
+      "gold_verified": false,
+      "should_abstain": true,
+      "status": "insufficient_evidence",
+      "answer": "Bukti dalam dokumen yang ditemukan belum cukup untuk menjawab pertanyaan tersebut.",
+      "raw_answer": "BUKTI_TIDAK_CUKUP\n\nInti pertanyaan adalah tentang prosedur mengganti oli mesin kendaraan, namun bukti yang diberikan tidak memberikan informasi tentang prosedur tersebut. Bukti yang diberikan berkaitan dengan farmakovigilans BPOM dan tidak terkait dengan prosedur penggantian oli kendaraan.",
+      "cited_sources": [],
+      "retrieved_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "D1_p069_c001",
+          "document_id": "D1",
+          "title": "Peraturan BPOM Nomor 4 Tahun 2026 tentang Pelaksanaan Farmakovigilans",
+          "source_file": "D1_perbpom_4_2026.pdf",
+          "pdf_page": 69,
+          "document_type": "regulation",
+          "legal_status": "in_force_as_of_2026-10-20",
+          "source_url": "https://jdih.pom.go.id/view/slide/1738/4/2026/1d424cdb0df701a960adbb0092314569",
+          "text": "-69- paralel kepada Kepala Badan melalui Pusat Farmakovigilans/MESO Nasional dan/atau Direktorat Registrasi Obat. Informasi keamanan baru terkait dengan cacat mutu atau dugaan produk Obat palsu yang dapat mempengaruhi evaluasi manfaat dan risiko Obat dan menimbulkan pembatasan distribusi abnormal, tidak termasuk masalah keamanan yang mendesak. Permasalahan tersebut harus dilaporkan kepada Kepala Badan melalui Pusat Farmakovigilans/MESO Nasional sesuai dengan ketentuan yang berlaku. 3. Periode pemantauan Pemilik Izin Edar harus menjamin pemantauan berkelanjutan dengan frekuensi yang proporsional terhadap risiko yang teridentifikasi, risiko potensial dan kebutuhan untuk informasi tambahan dari Obat atau zat aktif. Frekuensi pemantauan yang sesuai dapat bervariasi dengan akumulasi informasi dari profil risiko zat aktif atau Obat dengan mempertimbangkan: a. Waktu sejak persetujuan awal b. Sejauh mana paparan terhadap pasien c. Risiko potensial yang penting dan informasi yang tidak tersedia yang terdokumentasi dalam PMR d. Frekuensi pelaporan keamanan berkala pasca pemasaran e. Laporan KTD, ESO, atau KIPI yang diterima selama periode tertentu f. Isu keamanan pada situasi spesifik, misal kampanye vaksinasi Setiap organisasi harus menentukan frekuensi pemantauan yang tepat untuk setiap zat aktif/Obat, dengan mempertimbangkan butir di atas. Frekuensi pemantauan (termasuk perubahannya) dan justifikasinya harus didokumentasikan sesuai dengan prosedur internal organisasi. 4. Pemberitahuan dan Prosedur untuk Sinyal yang Terdeteksi oleh Pemilik Izin Edar Jika Pemilik Izin Edar mendeteksi sinyal, maka harus dilakukan proses manajemen sinyal hingga diketahui status validasi sinyal tersebut. Sinyal yang tervalidasi dapat dikategorikan sebagai masalah keamanan mendesak yang baru muncul (emerging safety issue) atau tidak. Pelaporan masalah keamanan mendesak yang baru muncul (emerging safety issue) sesuai dengan butir B.2. Untuk sinyal yang tidak termasuk masalah keamanan mendesak yang baru muncul (nonemerging safety issue), harus dilakukan penilaian lebih lanjut. Jika berdasarkan penilaian tersebut disimpulkan bahwa tidak ada hubungan kausal, maka dianggap sebagai sinyal terbantahkan. Sinyal tersebut harus dicantumkan dalam pelaporan keamanan berkala",
+          "distance": 0.20986807346343994,
+          "similarity": 0.7901319265365601
+        },
+        {
+          "rank": 2,
+          "chunk_id": "D1_p050_c001",
+          "document_id": "D1",
+          "title": "Peraturan BPOM Nomor 4 Tahun 2026 tentang Pelaksanaan Farmakovigilans",
+          "source_file": "D1_perbpom_4_2026.pdf",
+          "pdf_page": 50,
+          "document_type": "regulation",
+          "legal_status": "in_force_as_of_2026-10-20",
+          "source_url": "https://jdih.pom.go.id/view/slide/1738/4/2026/1d424cdb0df701a960adbb0092314569",
+          "text": "-50- 5. KTD yang diduga terkait dengan keluhan mutu produk, substandard dan/atau palsu. Sumber-sumber tersebut dapat diperoleh dari kegiatan surveilans pasif maupun surveilans aktif. Istilah aktif dan pasif digunakan untuk menggambarkan dua pendekatan alternatif terhadap surveilans. Surveilans pasif adalah mekanisme pemantauan keamanan Obat, termasuk vaksin yang didasarkan pada pengumpulan pelaporan rutin dan sukarela dari Tenaga Medis dan/atau Tenaga Kesehatan, Fasilitas Pelayanan Kesehatan, atau masyarakat. Kegiatan surveilans pasif menjadi dasar untuk memantau tren dan mendeteksi sinyal keamanan awal serta merupakan sumber data paling umum dalam Farmakovigilans, namun demikian sering kali kurang lengkap karena adanya keengganan atau keterlambatan dalam pelaporan. Berbeda dengan surveilans pasif, surveilans aktif bertujuan untuk mengidentifikasi secara lebih lengkap jumlah KTD dalam suatu proses yang terorganisir dan berkelanjutan, baik pada semua Obat maupun Obat yang berisiko tinggi. Pendekatan aktif berarti bahwa Pemilik Izin Edar yang melakukan surveilans memulai prosedur untuk memperoleh laporan, seperti panggilan telepon rutin atau kunjungan ke dokter atau rumah sakit; sedangkan pendekatan pasif terhadap surveilans berarti bahwa unit yang melakukan surveilans tidak menghubungi calon pelapor melainkan menyerahkan inisiatif pelaporan kepada pihak lain. Sebagai contoh, pemantauan pasien pengguna Obat tertentu melalui sistem manajemen risiko, survei pasien, atau skrining rekam medis. Surveilans aktif lebih efektif dibanding pelaporan pasif karena dapat mendeteksi masalah keamanan lebih cepat, meski tetap memiliki keterbatasan, khususnya pada efek yang muncul lama setelah paparan. Adanya KTD, ESO, atau KIPI yang diperoleh dari surveilans pasif dan aktif wajib dilaporkan kepada Kepala Badan melalui Pusat Farmakovigilans/MESO Nasional. Pemilik Izin Edar harus memastikan bahwa laporan KTD, ESO, atau KIPI yang diterima valid dan akan menyampaikan pembaruan laporan tersebut kepada Kepala Badan melalui Pusat Farmakovigilans/MESO Nasional. B.1. Desain surveilans aktif Pelaksanaan surveilans aktif dapat bersifat wajib atas permintaan BPOM (mandatory), maupun suka",
+          "distance": 0.211927592754364,
+          "similarity": 0.788072407245636
+        },
+        {
+          "rank": 3,
+          "chunk_id": "D1_p108_c002",
+          "document_id": "D1",
+          "title": "Peraturan BPOM Nomor 4 Tahun 2026 tentang Pelaksanaan Farmakovigilans",
+          "source_file": "D1_perbpom_4_2026.pdf",
+          "pdf_page": 108,
+          "document_type": "regulation",
+          "legal_status": "in_force_as_of_2026-10-20",
+          "source_url": "https://jdih.pom.go.id/view/slide/1738/4/2026/1d424cdb0df701a960adbb0092314569",
+          "text": "jarang terjadi atau bersifat tertunda, yang tidak terdeteksi selama uji klinik, dapat diidentifikasi setelah Obat, termasuk vaksin, digunakan secara luas di masyarakat. Oleh karena itu, Tenaga Medis dan/atau Tenaga Kesehatan serta masyarakat diharapkan untuk mewaspadai dan melaporkan setiap kejadian yang dicurigai sebagai KTD, ESO, atau KIPI kepada Kepala Badan melalui Pusat Farmakovigilans/MESO Nasional BPOM guna mendukung deteksi dan penilaian sinyal keamanan. Hal ini penting mengingat tidak ada Obat yang sepenuhnya aman bagi semua orang, di semua tempat, dan setiap waktu. B. Tujuan Pedoman ini bertujuan untuk memberikan panduan bagi Tenaga Medis dan/atau Tenaga Kesehatan, serta masyarakat dalam: 1. meningkatkan kesadaran mengenai pentingnya masalah keamanan Obat; 2. meningkatkan pelaporan Efek Samping Obat (ESO) dan/atau Kejadian Ikutan Pasca Imunisasi sehingga dapat diperoleh data yang baik dan cukup memadai untuk proses evaluasi untuk mengawal keamanan penggunaan Obat, termasuk vaksin di Indonesia; 3. mengurangi morbiditas dan mortalitas yang disebabkan oleh Obat melalui deteksi awal masalah keamanan Obat pada pasien dan meningkatkan pemilihan serta penggunaan Obat yang rasional; dan 4. meningkatkan kepercayaan dan keyakinan masyarakat mengenai keamanan vaksin.",
+          "distance": 0.21283316612243652,
+          "similarity": 0.7871668338775635
+        },
+        {
+          "rank": 4,
+          "chunk_id": "D1_p050_c002",
+          "document_id": "D1",
+          "title": "Peraturan BPOM Nomor 4 Tahun 2026 tentang Pelaksanaan Farmakovigilans",
+          "source_file": "D1_perbpom_4_2026.pdf",
+          "pdf_page": 50,
+          "document_type": "regulation",
+          "legal_status": "in_force_as_of_2026-10-20",
+          "source_url": "https://jdih.pom.go.id/view/slide/1738/4/2026/1d424cdb0df701a960adbb0092314569",
+          "text": "igilans/MESO Nasional. Pemilik Izin Edar harus memastikan bahwa laporan KTD, ESO, atau KIPI yang diterima valid dan akan menyampaikan pembaruan laporan tersebut kepada Kepala Badan melalui Pusat Farmakovigilans/MESO Nasional. B.1. Desain surveilans aktif Pelaksanaan surveilans aktif dapat bersifat wajib atas permintaan BPOM (mandatory), maupun sukarela (voluntary). Dalam pelaksanaannya, CIOMS membagi surveilans aktif ke dalam 3 (tiga) jenis, yaitu: 1. Surveilans aktif berbasis tempat Surveilans aktif berbasis tempat dilakukan di area tertentu, misalnya di unit rumah sakit atau praktik komunitas, dengan melibatkan petugas pemantau untuk meninjau rekam medis atau mengikuti kunjungan visite dalam rangka mewawancarai pasien dan/atau dokter untuk memastikan data KTD yang dilaporkan terkait Obat telah lengkap dan akurat. Pendekatan ini dapat dilakukan dengan metode sentinel sites atau sentinel events. Lokasi yang dipilih dapat memberikan informasi seperti data dari subkelompok pasien tertentu, yang tidak akan tersedia dalam sistem pelaporan pasif (spontan). Surveilans aktif dengan menggunakan metode sentinel sites paling efisien untuk Obat yang terutama digunakan di fasilitas institusional, seperti rumah sakit, panti jompo, pusat hemodialisis, dan sebagainya. Fasilitas tersebut biasanya memiliki frekuensi penggunaan Obat tertentu yang lebih",
+          "distance": 0.21288001537322998,
+          "similarity": 0.78711998462677
+        }
+      ],
+      "latency_seconds": 33.018,
+      "execution_error": null
+    }
+  ]
+}

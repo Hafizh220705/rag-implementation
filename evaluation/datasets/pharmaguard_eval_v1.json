@@ -1,0 +1,242 @@
+[
+  {
+    "question_id": "F01",
+    "category": "factual",
+    "question": "Apa yang dimaksud dengan farmakovigilans?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F02",
+    "category": "factual",
+    "question": "Mengapa keamanan obat yang beredar perlu terus dipantau?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F03",
+    "category": "factual",
+    "question": "Apa yang dimaksud dengan pelaporan spontan?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F04",
+    "category": "factual",
+    "question": "Siapa penanggung jawab utama aktivitas farmakovigilans menurut Peraturan BPOM Nomor 4 Tahun 2026?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F05",
+    "category": "factual",
+    "question": "Apa kewajiban pemilik izin edar terkait penunjukan penanggung jawab farmakovigilans?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F06",
+    "category": "factual",
+    "question": "Informasi apa yang harus disampaikan kepada Kepala Badan mengenai penanggung jawab farmakovigilans?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F07",
+    "category": "factual",
+    "question": "Apa kontribusi laporan ESO terhadap deteksi sinyal keamanan obat?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "F08",
+    "category": "factual",
+    "question": "Bagaimana ketentuan kerja sama jika farmakovigilans melibatkan pihak lain?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "P01",
+    "category": "paraphrase",
+    "question": "Mengapa pengawasan efek samping obat tidak berhenti setelah obat mendapat izin edar?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "P02",
+    "category": "paraphrase",
+    "question": "Siapa yang harus menyiapkan personel khusus untuk mengurus pemantauan keamanan obat?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "P03",
+    "category": "paraphrase",
+    "question": "Mengapa tenaga kesehatan perlu melaporkan dugaan efek samping obat?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "P04",
+    "category": "paraphrase",
+    "question": "Apa yang perlu dilakukan perusahaan jika penanggung jawab farmakovigilans berubah?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "P05",
+    "category": "paraphrase",
+    "question": "Mengapa industri farmasi memerlukan sistem untuk mengawasi risiko obat?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "P06",
+    "category": "paraphrase",
+    "question": "Bagaimana farmakovigilans membantu mencegah masalah keamanan obat?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "C01",
+    "category": "cross_document",
+    "question": "Bagaimana definisi farmakovigilans menurut Modul Dasar dan Modul untuk Industri Farmasi?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "C02",
+    "category": "cross_document",
+    "question": "Apa kesamaan tanggung jawab pemilik izin edar dalam Peraturan BPOM 4/2026 dan Modul Farmakovigilans Dasar?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "C03",
+    "category": "cross_document",
+    "question": "Bagaimana hubungan pelaporan spontan dalam Modul Dasar dengan manfaat laporan ESO dalam Buku Saku ESO?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "C04",
+    "category": "cross_document",
+    "question": "Apa tujuan pemantauan keamanan obat menurut Modul Industri Farmasi dan Modul Dasar?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "C05",
+    "category": "cross_document",
+    "question": "Bagaimana tanggung jawab industri farmasi dibahas dalam Modul Industri Farmasi dan Peraturan BPOM 4/2026?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "C06",
+    "category": "cross_document",
+    "question": "Bagaimana Modul Dasar dan Buku Saku ESO menjelaskan kontribusi pelaporan terhadap keamanan obat?",
+    "should_abstain": false,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "I01",
+    "category": "insufficient_evidence",
+    "question": "Bagaimana prosedur mengganti oli mesin kendaraan?",
+    "should_abstain": true,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "I02",
+    "category": "insufficient_evidence",
+    "question": "Berapa harga saham Kalbe Farma pada tanggal 21 Oktober 2026?",
+    "should_abstain": true,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "I03",
+    "category": "insufficient_evidence",
+    "question": "Apa jadwal jaga apoteker di Apotek Harmoni minggu ini?",
+    "should_abstain": true,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  },
+  {
+    "question_id": "I04",
+    "category": "insufficient_evidence",
+    "question": "Berapa jumlah kasus ESO di Rumah Sakit ABC selama September 2026?",
+    "should_abstain": true,
+    "gold_chunk_ids": [],
+    "reference_answer": "",
+    "verified": false,
+    "review_notes": ""
+  }
+]
