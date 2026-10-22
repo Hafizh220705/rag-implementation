@@ -1,1 +1,1 @@
-"""PharmaGuard-RAG application package (baseline pending)."""
+"""Evidence-grounded RAG for Indonesian pharmacovigilance documents."""

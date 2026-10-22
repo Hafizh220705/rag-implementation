@@ -1,57 +1,63 @@
+import argparse
 import json
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+from pharmaguard_rag.evaluation_metrics import (
+    classify_generation_case,
+)
+
 ROOT = Path(__file__).resolve().parents[1]
 
 BASELINE_PATH = (
-    ROOT / "outputs/evaluations/generation_baseline_v1.json"
+    ROOT / "outputs/evaluations/generation_baseline_v3_final.json"
 )
 
 REVIEW_PATH = (
-    ROOT / "evaluation/datasets/generation_human_review_v1.json"
+    ROOT / "evaluation/datasets/generation_human_review_v3.json"
 )
 
 OUTPUT_PATH = (
-    ROOT / "outputs/evaluations/failure_analysis_v1.json"
+    ROOT / "outputs/evaluations/failure_analysis_v3.json"
 )
 
 MARKDOWN_PATH = (
-    ROOT / "docs/baseline_failure_analysis.md"
+    ROOT / "docs/baseline_failure_analysis_v3.md"
 )
 
 
 def classify_case(case):
-    status = case["status"]
-    should_abstain = case["should_abstain"]
-
-    if status == "execution_error":
-        return "technical_failure"
-
-    if status == "citation_error":
-        return "citation_failure"
-
-    if status == "insufficient_evidence":
-        if should_abstain:
-            return "expected_abstention"
-        return "possible_false_abstention"
-
-    if status == "answered":
-        if should_abstain:
-            return "possible_unsupported_answer"
-        return "answered_pending_review"
-
-    return "unknown_status"
+    return classify_generation_case(
+        status=case["status"],
+        should_abstain=case["should_abstain"],
+    )
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--baseline", type=Path, default=BASELINE_PATH)
+    parser.add_argument("--review", type=Path, default=REVIEW_PATH)
+    parser.add_argument("--output", type=Path, default=OUTPUT_PATH)
+    parser.add_argument("--markdown", type=Path, default=MARKDOWN_PATH)
+    args = parser.parse_args()
+
+    def resolve(path):
+        return path if path.is_absolute() else ROOT / path
+
+    baseline_path = resolve(args.baseline)
+    review_path = resolve(args.review)
+    output_path = resolve(args.output)
+    markdown_path = resolve(args.markdown)
+    if output_path.exists() or markdown_path.exists():
+        parser.error("Output exists. Use new JSON and Markdown filenames.")
+
     baseline = json.loads(
-        BASELINE_PATH.read_text(encoding="utf-8")
+        baseline_path.read_text(encoding="utf-8")
     )
 
     reviews = json.loads(
-        REVIEW_PATH.read_text(encoding="utf-8")
+        review_path.read_text(encoding="utf-8")
     )
 
     cases = baseline["per_question"]
@@ -110,7 +116,7 @@ def main():
         "generated_at_utc": datetime.now(
             timezone.utc
         ).isoformat(),
-        "experiment": "generation_baseline_v1",
+        "experiment": baseline.get("pipeline", baseline_path.stem),
         "total_questions": len(cases),
         "human_verified": verified_count,
         "status_counts": dict(
@@ -126,12 +132,12 @@ def main():
         "cases": classified,
     }
 
-    OUTPUT_PATH.parent.mkdir(
+    output_path.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    OUTPUT_PATH.write_text(
+    output_path.write_text(
         json.dumps(
             report,
             ensure_ascii=False,
@@ -199,12 +205,12 @@ def main():
         "5. Apply revisions and rerun the same evaluation set.",
     ])
 
-    MARKDOWN_PATH.parent.mkdir(
+    markdown_path.parent.mkdir(
         parents=True,
         exist_ok=True,
     )
 
-    MARKDOWN_PATH.write_text(
+    markdown_path.write_text(
         "\n".join(lines) + "\n",
         encoding="utf-8",
     )
@@ -216,8 +222,8 @@ def main():
     for name, count in sorted(counts.items()):
         print(f"{name}: {count}")
 
-    print("\nJSON report:", OUTPUT_PATH)
-    print("Markdown report:", MARKDOWN_PATH)
+    print("\nJSON report:", output_path)
+    print("Markdown report:", markdown_path)
 
 if __name__ == "__main__":
     main()

@@ -8,6 +8,10 @@ EVAL_PATH = (
     ROOT / "evaluation/datasets/pharmaguard_eval_v1.json"
 )
 
+DEFAULT_REPORT_PATH = (
+    ROOT / "outputs/evaluations/generation_baseline_v2.json"
+)
+
 CHUNKS_PATH = (
     ROOT / "data/processed/chunks.jsonl"
 )
@@ -18,7 +22,15 @@ def main():
     )
 
     parser.add_argument("question_id")
-    parser.add_argument("chunk_ids", nargs="+")
+    parser.add_argument("chunk_ids", nargs="*")
+    parser.add_argument(
+        "--report",
+        type=Path,
+        help=(
+            "Use retrieved candidates from a generation report when "
+            "chunk IDs are omitted."
+        ),
+    )
 
     args = parser.parse_args()
 
@@ -40,6 +52,44 @@ def main():
             f"Unknown question ID: {args.question_id}"
         )
 
+    chunk_ids = list(args.chunk_ids)
+
+    if not chunk_ids:
+        report_path = args.report or DEFAULT_REPORT_PATH
+
+        if not report_path.is_absolute():
+            report_path = ROOT / report_path
+
+        if not report_path.exists() and args.report is None:
+            report_path = (
+                ROOT
+                / "outputs/evaluations/generation_baseline_v1.json"
+            )
+
+        report = json.loads(
+            report_path.read_text(encoding="utf-8")
+        )
+        result = next(
+            (
+                item for item in report["per_question"]
+                if item["question_id"] == args.question_id
+            ),
+            None,
+        )
+
+        if result is None:
+            raise ValueError(
+                f"Question {args.question_id} not found in "
+                f"{report_path}"
+            )
+
+        chunk_ids = [
+            item["chunk_id"]
+            for item in result["retrieved_chunks"]
+        ]
+
+        print("Candidate source:", report_path)
+
     # Load corpus chunks
     with CHUNKS_PATH.open(
         "r",
@@ -57,7 +107,7 @@ def main():
     print("Category:", question["category"])
     print("Question:", question["question"])
 
-    for chunk_id in args.chunk_ids:
+    for chunk_id in chunk_ids:
         if chunk_id not in chunks:
             print(f"\n[NOT FOUND] {chunk_id}")
             continue
@@ -69,6 +119,11 @@ def main():
         print("Document:", chunk["document_id"])
         print("Title:", chunk.get("title"))
         print("PDF Page:", chunk["pdf_page"])
+        print(
+            "Original PDF:",
+            ROOT / "data/raw" / chunk["source_file"],
+        )
+        print("Source URL:", chunk.get("source_url"))
         print("=" * 70)
 
         # Show full chunk rather than truncated preview

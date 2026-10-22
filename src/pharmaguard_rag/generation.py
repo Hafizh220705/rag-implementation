@@ -6,6 +6,19 @@ from urllib.request import Request, urlopen
 DEFAULT_MODEL = "qwen2.5:3b"
 DEFAULT_BASE_URL = "http://127.0.0.1:11434"
 
+
+class GenerationTruncatedError(RuntimeError):
+    """Raised when Ollama stops because the output limit was reached."""
+
+    def __init__(self, partial_response: str):
+        super().__init__(
+            "Ollama output was truncated because the generation "
+            "limit was reached. Partial output was rejected."
+        )
+        self.partial_response = partial_response
+        self.done_reason = "length"
+
+
 class OllamaGenerator:
     """Generate text using a local Ollama model."""
 
@@ -31,6 +44,7 @@ class OllamaGenerator:
         self,
         system_prompt: str,
         user_prompt: str,
+        response_format: dict | None = None,
     ) -> str:
         """Send a chat request and return the answer."""
 
@@ -55,8 +69,14 @@ class OllamaGenerator:
                 "num_ctx": 4096,
                 "num_predict": 768,
                 "seed": 42,
+                "repeat_penalty": 1.1,
             },
         }
+
+        if response_format is not None:
+            payload["format"] = response_format
+            payload["options"].update(num_ctx=8192, num_predict=128)
+        self.last_diagnostics = {}
 
         body = json.dumps(payload).encode("utf-8")
 
@@ -91,6 +111,9 @@ class OllamaGenerator:
                 "Ensure the Ollama server is running."
             ) from error
         
+        self.last_diagnostics = {key: result.get(key) for key in (
+            "prompt_eval_count", "eval_count", "done_reason", "total_duration",
+        )}
         content = (
             result.get("message", {})
             .get("content", "")
@@ -104,10 +127,6 @@ class OllamaGenerator:
 
         # Check whether generation was truncated
         if result.get("done_reason") == "length":
-            raise RuntimeError(
-                "Ollama output was truncated because the "
-                "generation limit was reached. "
-                "Reduce answer length or increase num_predict."
-            )
+            raise GenerationTruncatedError(content)
 
         return content

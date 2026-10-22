@@ -15,7 +15,7 @@ class FakeRetriever:
                 "pdf_page": 18,
                 "similarity": 0.89,
                 "text": (
-                    "Farmakovigilans berkaitan dengan "
+                    "Farmakovigilans adalah kegiatan "
                     "pemantauan keamanan obat."
                 ),
             }
@@ -51,12 +51,11 @@ class FakeObserver:
     "model_response, expected_status",
     [
         (
-            "Farmakovigilans adalah kegiatan pemantauan "
-            "keamanan obat [S1].",
+            '{"evidence_ids": ["E1"]}',
             "answered",
         ),
         (
-            "BUKTI_TIDAK_CUKUP",
+            '{"evidence_ids": []}',
             "insufficient_evidence",
         ),
     ],
@@ -110,8 +109,7 @@ def test_langfuse_disabled_does_not_block(monkeypatch):
     pipeline = TracedRAGPipeline(
         retriever=FakeRetriever(),
         generator=FakeGenerator(
-            "Farmakovigilans berkaitan dengan "
-            "pemantauan keamanan obat [S1]."
+            '{"evidence_ids": ["E1"]}'
         ),
         observer=observer,
     )

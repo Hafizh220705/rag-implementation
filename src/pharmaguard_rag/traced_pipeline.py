@@ -9,6 +9,15 @@ class TracedRetriever:
         self.retriever = retriever
         self.observer = observer
 
+    def close(self):
+        if hasattr(self.retriever, "close"):
+            self.retriever.close()
+
+    def evidence_pages(self, chunks):
+        if hasattr(self.retriever, "evidence_pages"):
+            return self.retriever.evidence_pages(chunks)
+        return chunks
+
     def search(self, question: str, top_k: int = 4):
         with self.observer.observation(
             name="dense-retrieval",
@@ -96,6 +105,7 @@ class TracedGenerator:
                 user_prompt=user_prompt,
                 **kwargs,
             )
+            self.last_diagnostics = getattr(self.generator, "last_diagnostics", {})
 
             latency = perf_counter() - start
 
@@ -150,7 +160,7 @@ class TracedRAGPipeline:
             },
             metadata={
                 "application": "PharmaGuard-RAG",
-                "pipeline_version": "baseline-v1",
+                "pipeline_version": "baseline-v3",
             },
         ) as span:
 
@@ -181,3 +191,9 @@ class TracedRAGPipeline:
         """Send pending traces before the script exits."""
 
         self.observer.flush()
+
+    def close(self):
+        try:
+            self.flush()
+        finally:
+            self.pipeline.close()
