@@ -1,3 +1,4 @@
+import argparse
 import hashlib
 import json
 import chromadb
@@ -24,6 +25,15 @@ def load_chunks():
         ]
 
 def main():
+    parser = argparse.ArgumentParser(description="Build a fresh index or validate an existing frozen index.")
+    parser.add_argument("--check", action="store_true", help="Validate a read-only snapshot; no embedding inference.")
+    parser.add_argument("--index-dir", type=Path, default=INDEX_DIR)
+    parser.add_argument("--report", type=Path, default=REPORT_DIR / "indexing_report.json")
+    args = parser.parse_args()
+    index_dir = args.index_dir if args.index_dir.is_absolute() else ROOT / args.index_dir
+    report_path = args.report if args.report.is_absolute() else ROOT / args.report
+    if not args.check and ((index_dir.exists() and any(index_dir.iterdir())) or report_path.exists()):
+        parser.error("Index or report exists. Use a new --index-dir and --report; frozen artifacts cannot be overwritten.")
     print("=== PHARMAGUARD INDEXING ===")
 
     chunks = load_chunks()
@@ -42,15 +52,27 @@ def main():
 
     print(f"Loaded chunks: {len(chunks)}")
 
+    if args.check:
+        store = ChromaVectorStore(index_dir, MODEL_NAME, corpus_sha256)
+        try:
+            indexed_ids = set(store.collection.get(include=[])["ids"])
+            if indexed_ids != set(chunk_ids):
+                raise ValueError("Index IDs do not match the frozen chunks.")
+            print(f"[OK] Existing index: {store.count()} vectors; model, corpus hash and chunk IDs match.")
+        finally:
+            store.close()
+        return
+
     embedder = E5Embedder(
         model_name=MODEL_NAME,
         device="cpu",
     )
 
     store = ChromaVectorStore(
-        persist_directory=INDEX_DIR,
+        persist_directory=index_dir,
         model_name=MODEL_NAME,
         corpus_sha256=corpus_sha256,
+        read_only=False,
     )
 
     for start in range(0, len(chunks), BATCH_SIZE):
@@ -95,9 +117,7 @@ def main():
         "indexed_count": indexed_count,
     }
 
-    REPORT_DIR.mkdir(parents=True, exist_ok=True)
-
-    report_path = REPORT_DIR / "indexing_report.json"
+    report_path.parent.mkdir(parents=True, exist_ok=True)
 
     report_path.write_text(
         json.dumps(report, ensure_ascii=False, indent=2),
@@ -107,7 +127,8 @@ def main():
     print("\n=== INDEXING COMPLETED ===")
     print(f"Indexed vectors: {indexed_count}")
     print(f"Vector dimension: {embedder.dimension}")
-    print(f"Database path: {INDEX_DIR}")
+    store.close()
+    print(f"Database path: {index_dir}")
     print(f"Report: {report_path}")
 
 if __name__ == "__main__":

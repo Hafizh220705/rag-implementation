@@ -1,6 +1,7 @@
 {
-  "dataset_name": "PharmaGuard-RAG Indonesian pharmacovigilance corpus (candidate)",
-  "status": "candidate_not_yet_audited",
+  "dataset_name": "PharmaGuard-RAG Indonesian pharmacovigilance corpus",
+  "status": "audited_and_frozen_for_baseline_v1",
+  "audit_report": "outputs/evaluations/corpus_audit.json",
   "source_policy": "Official public sources; check redistribution conditions before rehosting PDFs.",
   "documents": [
     {

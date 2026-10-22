@@ -1,3 +1,28 @@
+def classify_generation_case(
+    status: str,
+    should_abstain: bool,
+) -> str | None:
+    """Classify a generation outcome as a review candidate."""
+
+    if status == "execution_error":
+        return "technical_failure"
+
+    if status == "citation_error":
+        return "citation_failure"
+
+    if status == "insufficient_evidence":
+        if should_abstain:
+            return "expected_abstention"
+        return "possible_false_abstention"
+
+    if status == "answered":
+        if should_abstain:
+            return "possible_unsupported_answer"
+        return "answered_pending_review"
+
+    return "unknown_status"
+
+
 def score_retrieval_case(
     case: dict,
     retrieved_ids: list[str],
@@ -107,4 +132,40 @@ def summarize_retrieval(scores: list[dict]) -> dict:
         "cross_document_questions": len(
             cross_document_scores
         ),
+    }
+
+
+def score_abstention_case(
+    case: dict,
+    pipeline_status: str,
+) -> dict:
+    """Score one verified insufficient-evidence question separately."""
+
+    if not case.get("verified"):
+        raise ValueError("Question has not been verified.")
+
+    if not case["should_abstain"]:
+        raise ValueError("Question is not an abstention case.")
+
+    return {
+        "question_id": case["question_id"],
+        "pipeline_status": pipeline_status,
+        "abstention_correct": int(
+            pipeline_status == "insufficient_evidence"
+        ),
+    }
+
+
+def summarize_abstention(scores: list[dict]) -> dict:
+    """Aggregate verified insufficient-evidence cases."""
+
+    if not scores:
+        raise ValueError("No abstention scores available.")
+
+    return {
+        "evaluated_questions": len(scores),
+        "question_ids": [score["question_id"] for score in scores],
+        "abstention_accuracy": sum(
+            score["abstention_correct"] for score in scores
+        ) / len(scores),
     }

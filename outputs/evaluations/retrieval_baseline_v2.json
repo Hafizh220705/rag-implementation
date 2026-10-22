@@ -1,0 +1,53 @@
+{
+  "generated_at_utc": "2026-10-22T01:19:18.596533+00:00",
+  "experiment": "retrieval_baseline_v2",
+  "retrieval_method": "dense",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "top_k": 4,
+  "dataset_sha256": "df070333bca35623be96f2607b20b8345b9115f4e2a8e1369a192a7eca01090c",
+  "corpus_sha256": "cb936746ed6314f85aca570217927374c859012b6b0beb470ddeee03580652db",
+  "collection_name": null,
+  "total_dataset_questions": 24,
+  "metric_denominator": "verified answerable questions only",
+  "evaluated_question_ids": [],
+  "verified_abstention_question_ids": [],
+  "pending_question_ids": [
+    "F01",
+    "F02",
+    "F03",
+    "F04",
+    "F05",
+    "F06",
+    "F07",
+    "F08",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "C01",
+    "C02",
+    "C03",
+    "C04",
+    "C05",
+    "C06",
+    "I01",
+    "I02",
+    "I03",
+    "I04"
+  ],
+  "summary": {
+    "evaluated_questions": 0,
+    "hit_at_k": null,
+    "mrr_at_k": null,
+    "cross_document_coverage_at_k": null,
+    "cross_document_questions": 0
+  },
+  "per_question": [],
+  "limitations": [
+    "Unverified questions are excluded from retrieval metrics.",
+    "Insufficient-evidence questions require separate abstention evaluation.",
+    "This development set is not a held-out benchmark."
+  ]
+}
